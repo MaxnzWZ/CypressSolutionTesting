@@ -1,5 +1,9 @@
 # CypressSolutionTesting
-End to End testing solution with Cypress
+This is an end to end example automation testing solution by using Cypress and Javascript language. Cypress is a next generation end to end testing tool built for the modern web. With it, tests can be faster, easier and more reliable.
+
+You can find more details in https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell
+
+
 
 ## Prerequisites
 + Nodejs 
@@ -52,6 +56,7 @@ npx cypress run --headless --browser firefox (headless run with firefox)
 npx cypress run --spec "cypress/integration/path_check_kiwisaver_calculator.spec.js"
 ```
 #### Run tests with Cypress Dashboard [https://docs.cypress.io/guides/dashboard/introduction.html#Features]
+##### The [Cypress Dashboard](https://on.cypress.io/dashboard) is a service that gives you access to recorded tests - typically when running Cypress tests from your [CI provider](https://docs.cypress.io/guides/guides/continuous-integration.html#Examples). The Dashboard provides you insight into what happened when your tests ran.
 ```
 npx cypress run --record --key d3c5d06d-20cf-4671-ae56-9d9378128b0b
 ```

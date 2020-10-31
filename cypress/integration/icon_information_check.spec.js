@@ -59,17 +59,17 @@ describe("User Story 1: Check information icons for all fields", () => {
     This is the reason why we choose this page for testing all info provided by clicking info icons
     */
     cy.getIframeBody(CalculatorPage.iframeLocator)
-    .then(($body) => {
-      cy.wrap($body)
-        .find("#widget")
-        .within(($el) => {
-          // Select Employed for Employment Status
-          cy.contains("Select").click();
-          cy.contains("Employed").click();
-          // Make sure the elements already exist in Calculator for Employed Customers
-          cy.contains("Salary or wages per year (before tax)");
-          cy.contains("KiwiSaver member contribution");
-        });
+      .then(($body) => {
+        cy.wrap($body)
+          .find("#widget")
+          .within(($el) => {
+            // Select Employed for Employment Status
+            cy.contains("Select").click();
+            cy.contains("Employed").click();
+            // Make sure the elements already exist in Calculator for Employed Customers
+            cy.contains("Salary or wages per year (before tax)");
+            cy.contains("KiwiSaver member contribution");
+          });
     });   
 
   });
