@@ -8,6 +8,12 @@ const information = {
   currentKiwiSaverBalanceInfo: [
     "If you do not have a KiwiSaver account, then leave this field blank.",
   ],
+  salaryOrWagesPerYearInfo: [
+    "Only include your total annual income that is paid to you by your employer(s). Other income sources such as rental income or dividends should not be included.",
+  ],
+  kiwiSaverMemberContribution: [
+    "You can choose to contribute a regular amount equal to 3%, 4%, 6%, 8% or 10% of your before-tax salary or wage. If you do not select a rate, your rate will be 3%.",
+  ],
   voluntaryContributionsInfo: [
     "If you are 'Self-Employed' or 'Not employed', you can make direct contributions to your KiwiSaver account. If you are 'Employed', you can make voluntary contributions in addition to your regular employee contributions.",
   ],
@@ -34,6 +40,8 @@ const targetLinks = {
 const containerLocators = {
   currentAge: ".wpnib-field-current-age",
   employmentStatus: ".wpnib-field-employment-status",
+  annualIncome: ".wpnib-field-annual-income",
+  kiwiSaverMemberContribution: ".wpnib-field-kiwisaver-member-contribution",
   currentKiwiSaverBalance: ".wpnib-field-kiwi-saver-balance",
   voluntaryContributions: ".wpnib-field-voluntary-contributions",
   riskProfile: ".wpnib-field-risk-profile",
@@ -41,9 +49,29 @@ const containerLocators = {
 };
 
 describe("User Story 1: Check information icons for all fields", () => {
-  beforeEach("Open kiwisaver calculator", () => {
+  beforeEach("Open kiwisaver calculator with Employed Status", () => {
     cy.visit("/kiwisaver/calculators/kiwisaver-calculator/");
     cy.contains("h1", "KiwiSaver Retirement Calculator");
+
+    /*
+    Select Employed from the dropdown list of Employment status
+    Calculator for employed has the complete list of the info icons
+    This is the reason why we choose this page for testing all info provided by clicking info icons
+    */
+    cy.getIframeBody(CalculatorPage.iframeLocator)
+    .then(($body) => {
+      cy.wrap($body)
+        .find("#widget")
+        .within(($el) => {
+          // Select Employed for Employment Status
+          cy.contains("Select").click();
+          cy.contains("Employed").click();
+          // Make sure the elements already exist in Calculator for Employed Customers
+          cy.contains("Salary or wages per year (before tax)");
+          cy.contains("KiwiSaver member contribution");
+        });
+    });   
+
   });
 
   it("Check info icon for current age field", () => {
@@ -53,6 +81,14 @@ describe("User Story 1: Check information icons for all fields", () => {
 
   it("Check info icon for Employment status", () => {
     CalculatorPage.checkIconInformation(containerLocators.employmentStatus, information.employmentStatusInfo);
+  });
+
+  it("Check info icon for Salary or Wage per Year (before tax)", () => {
+    CalculatorPage.checkIconInformation(containerLocators.annualIncome, information.salaryOrWagesPerYearInfo);
+  });
+
+  it("Check info icon for KiwiSaver member contribution", () => {
+    CalculatorPage.checkIconInformation(containerLocators.kiwiSaverMemberContribution, information.kiwiSaverMemberContribution);
   });
 
   it("Check info icon for Current Kiwisaver balance", () => {
