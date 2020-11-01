@@ -105,7 +105,6 @@ describe("User Story 1: Check information icons for all fields", () => {
 
   it("Check info icon for Savings goal at retirement", () => {
     CalculatorPage.checkIconInformation(containerLocators.savingsGoalAtRetirement, information.savingsGoalAtRetirementInfo);
-    cy.log("test");
   });
 
   it("Check the link of icon info for Risk profile", () => {
