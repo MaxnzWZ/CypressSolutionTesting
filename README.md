@@ -15,7 +15,9 @@ You can find more details in https://docs.cypress.io/guides/overview/why-cypress
   Other OSs install: [https://nodejs.org/en/download/package-manager/]
 
 + Browsers 
+  
   Chrome: Version 86.0.4240.111 
+
   Firefox: Version 82.0.2 
 
 ## Git clone the repo to local directory
