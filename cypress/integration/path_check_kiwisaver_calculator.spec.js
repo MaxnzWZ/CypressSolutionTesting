@@ -1,5 +1,5 @@
-describe('Check the path of kiwi saver calculation in home page', () => {
-  it('path check', () => {
+describe('User story3: Check the path of kiwi saver calculation in home page', () => {
+  it('check the path of kiwi saver calculation in home page', () => {
     cy.visit("/");
     cy.contains("a#ubermenu-section-link-kiwisaver-ps", "KiwiSaver").click();
 
