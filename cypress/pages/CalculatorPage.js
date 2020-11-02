@@ -88,7 +88,7 @@ export function calculateForCustomer(employmentStatus, customer) {
               .click()
               .should("not.be.visible");
             // Make sure the customer can get the KiwiSaver projected balanc by using the calculator
-            cy.contains("436,365");
+            cy.contains(customer.expectedCalculateResult);
           });
       });
       break;
@@ -120,7 +120,7 @@ export function calculateForCustomer(employmentStatus, customer) {
               .click()
               .should("not.be.visible");
 
-            cy.contains("259,581");
+            cy.contains(customer.expectedCalculateResult);
           });
       });
       break;
@@ -152,7 +152,7 @@ export function calculateForCustomer(employmentStatus, customer) {
               .click()
               .should("not.be.visible");
 
-            cy.contains("197,679");
+            cy.contains(customer.expectedCalculateResult);
           });
       });
       break;

@@ -6,7 +6,8 @@ const customers = {
     employmentStatus: CalculatorPage.EMPLOYMENT_STATUS.EMPLOYED,
     salaryPerYear: 82000,
     kiwiSaverMemberContribution: 4,
-    riskProfile: "Defensive"
+    riskProfile: "Defensive",
+    expectedCalculateResult: "436,365"
   },
   selfEmployed: {
     currentAge: 45,
@@ -15,7 +16,8 @@ const customers = {
     voluntaryContributions: 90,
     frequency: CalculatorPage.VOLUNTARY_CONTRIBUTIONS_FREQUENCY.FORTNIGHTLY,
     riskProfile: "Conservative",
-    savingGoalAtRetrirement: 290000
+    savingGoalAtRetrirement: 290000,
+    expectedCalculateResult: "259,581"
   },
   notEmployed: {
     currentAge: 55,
@@ -24,7 +26,8 @@ const customers = {
     voluntaryContributions: 10,
     frequency: CalculatorPage.VOLUNTARY_CONTRIBUTIONS_FREQUENCY.ANNUALLY,
     riskProfile: "Balanced",
-    savingGoalAtRetrirement: 200000
+    savingGoalAtRetrirement: 200000,
+    expectedCalculateResult: "197,679"
   }
 }
 

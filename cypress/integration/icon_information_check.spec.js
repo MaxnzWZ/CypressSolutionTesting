@@ -74,36 +74,36 @@ describe("User Story 1: Check information icons for all fields", () => {
 
   });
 
-  it("Check info icon for current age field", () => {
+  it("Check icon info for current age field", () => {
     cy.log("age message: " + information.currentAgeInfo);
     CalculatorPage.checkIconInformation(containerLocators.currentAge, information.currentAgeInfo);
   });
 
-  it("Check info icon for Employment status", () => {
+  it("Check icon info for Employment status", () => {
     CalculatorPage.checkIconInformation(containerLocators.employmentStatus, information.employmentStatusInfo);
   });
 
-  it("Check info icon for Salary or Wage per Year (before tax)", () => {
+  it("Check icon info for Salary or Wage per Year (before tax)", () => {
     CalculatorPage.checkIconInformation(containerLocators.annualIncome, information.salaryOrWagesPerYearInfo);
   });
 
-  it("Check info icon for KiwiSaver member contribution", () => {
+  it("Check icon info for KiwiSaver member contribution", () => {
     CalculatorPage.checkIconInformation(containerLocators.kiwiSaverMemberContribution, information.kiwiSaverMemberContribution);
   });
 
-  it("Check info icon for Current Kiwisaver balance", () => {
+  it("Check icon info for Current Kiwisaver balance", () => {
     CalculatorPage.checkIconInformation(containerLocators.currentKiwiSaverBalance, information.currentKiwiSaverBalanceInfo);
   });
 
-  it("Check info icon for Voluntary contributions", () => {
+  it("Check icon info for Voluntary contributions", () => {
     CalculatorPage.checkIconInformation(containerLocators.voluntaryContributions, information.voluntaryContributionsInfo);
   });
 
-  it("Check info icon for Risk profile", () => {
+  it("Check icon info for Risk profile", () => {
     CalculatorPage.checkIconInformation(containerLocators.riskProfile, information.riskProfileContentInfo);
   });
 
-  it("Check info icon for Savings goal at retirement", () => {
+  it("Check icon info for Savings goal at retirement", () => {
     CalculatorPage.checkIconInformation(containerLocators.savingsGoalAtRetirement, information.savingsGoalAtRetirementInfo);
   });
 
